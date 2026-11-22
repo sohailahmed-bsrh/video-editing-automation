@@ -4,3 +4,7 @@ venv/
 *.mp4
 *.mov
 output/
+
+.env
+*.env
+backend/.env
