@@ -136,7 +136,9 @@ npm run dev
       <p>
         <a href="https://sohail.devsil.com"><strong>Portfolio Website</strong></a> | 
         <a href="https://github.com/sohailahmed-bsrh"><strong>GitHub Profile</strong></a> | 
-        <a href="https://www.linkedin.com/in/sohail-ahmed-546314316/"><strong>LinkedIn</strong></a> | 
+        <a href="https://www.linkedin.com/in/sohail-ahmed-devsil/"><strong>LinkedIn</strong></a> | 
+        <a href="https://www.kaggle.com/sohail2411126"><strong>Kaggle</strong></a> | 
+        <a href="https://x.com/ahmed241126"><strong>Twitter/X</strong></a> | 
         <a href="mailto:se906403@gmail.com"><strong>Email Contact</strong></a>
       </p>
     </td>
