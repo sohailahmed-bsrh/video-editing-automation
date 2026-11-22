@@ -1,27 +1,43 @@
-# Automated Video Post-Production and Audio Ducking Pipeline
+<div align="center">
 
-> Distributed FFmpeg and Whisper media processing pipeline for automated rough cuts and subtitles.
+<h1>Automated Video Processing & Subtitle Generation Pipeline</h1>
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github)](https://github.com/sohailahmed-bsrh/video-editing-automation)
-[![Live Showcase](https://img.shields.io/badge/Live-Showcase-0A66C2?style=flat-square&logo=googlechrome)](https://sohail.devsil.com/projects.html)
-[![Author](https://img.shields.io/badge/Author-Sohail%20Ahmed-20BEFF?style=flat-square)](https://sohail.devsil.com)
+<img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=800&size=22&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=800&lines=Automated+Video+Processing;Whisper+Speech-to-Text+Subtitling;MoviePy+Video+Assembly;FastAPI+%2B+React+Interface" alt="Typing Header" />
+
+<p><strong>Programmatic Video Processing, Audio Extraction, Whisper Subtitling, and MoviePy Rendering</strong></p>
+
+<p>
+  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=python,fastapi,react,vite,ts,tailwind,github&theme=dark" alt="Skills" /></a>
+</p>
+
+<p>
+  <a href="#overview">Overview</a> &bull;
+  <a href="#system-architecture">Architecture</a> &bull;
+  <a href="#visual-showcase-gallery">Visual Gallery</a> &bull;
+  <a href="#core-capabilities">Capabilities</a> &bull;
+  <a href="#installation--setup">Installation</a> &bull;
+  <a href="#author--contact-information">Author</a>
+</p>
+
+</div>
 
 ---
-
 ## Overview
 
-Video editors spend hours performing repetitive rough cuts, silence removal, subtitle timing, and audio leveling.
-
-This project provides an end-to-end, reproducible implementation engineered to solve this challenge through verified data transformations, reliable algorithms, and production-ready architecture.
+The Video Editing Automation framework automates repetitive video editing workflows. Given raw video files, the pipeline extracts audio tracks, performs speech transcription with OpenAI Whisper, generates synchronized animated subtitle overlays, applies video speed curves, and renders final composite videos using MoviePy and FFmpeg.
 
 ---
 
-## Key Features
+## Visual Showcase Gallery
 
-- Voice activity detection identifying and excising silence intervals from raw footage
-- Whisper speech-to-text integration generating frame-synchronized subtitle captions
-- Automated background audio ducking whenever speech frequencies are detected
-- Asynchronous Python worker queue coordinated via Redis and BullMQ
+<table width="100%" align="center">
+  <tr>
+    <td align="center"><b>Application Interface & Processing Hero</b><br><sub>Vite & React frontend interface communicating with FastAPI video processing backend.</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="frontend/src/assets/hero.png" alt="Video Hero Screen" width="700"/></td>
+  </tr>
+</table>
 
 ---
 
@@ -29,79 +45,62 @@ This project provides an end-to-end, reproducible implementation engineered to s
 
 ```mermaid
 flowchart TD
-    RawVideo[Raw Video Upload] --> Worker[Python Processing Worker]
-    Worker --> VAD[Voice Activity Detection / Silence Trimming]
-    Worker --> Whisper[Whisper Speech-to-Text]
-    VAD --> CutList[Dynamic EDL Cut Decision List]
-    Whisper --> Subtitles[SRT Subtitle Generation]
-    CutList --> FFmpeg[FFmpeg Concat & Filter Engine]
-    Subtitles --> FFmpeg
-    FFmpeg --> FinalRender[Rendered Production Video]
+    A[Raw Video File Upload: MP4 / MOV] --> B[Audio Stream Extraction via FFmpeg]
+    B --> C[OpenAI Whisper Automated Transcription]
+    C --> D[Timestamp-Synchronized Subtitle Segments]
+    D --> E[Animated Subtitle Graphic Generator]
+    A --> F[MoviePy Video Compositor Engine]
+    E --> F
+    F --> G[Video Compression & Final MP4 Export]
 ```
 
 ---
 
 ## Technology Stack
 
-| Technology | Version / Spec | Role in Architecture |
-| :--- | :--- | :--- |
-| **FFmpeg & MoviePy** | `Latest` | Audio extraction, video filtering, and multithreaded rendering |
-| **Whisper** | `Base/Medium` | Local automatic speech recognition and subtitle timestamping |
-| **Node.js Backend** | `18+` | Job queue dispatching and file upload handling |
-| **Python Worker** | `3.10+` | Mathematical silence detection and scene slicing |
+| Layer | Technologies |
+| :--- | :--- |
+| Backend Server | FastAPI, Python 3.10+, Uvicorn |
+| Media Processing | MoviePy, FFmpeg, Whisper |
+| Frontend Interface | React, TypeScript, Vite, Tailwind CSS |
 
 ---
 
-## Repository Structure
+## Installation & Setup
 
-```text
-video-editing-automation/
-|-- backend/
-|   |-- python-worker/
-|   |   |-- app/
-|   |   |   |-- audio_analysis/
-|   |   |   |-- scene_detection/
-|   |   |   `-- transcription/
-|   |   `-- main.py
-|   |-- src/
-|   |-- .env.example
-|   `-- package.json
-|-- .gitignore
-`-- README.md
-```
-
----
-
-## Installation and Execution
-
-### Prerequisites
-- Node.js 18+ / Python 3.10+
-- Git version control
-
-### Setup Instructions
-1. Clone the repository:
 ```bash
+# Clone the repository
 git clone https://github.com/sohailahmed-bsrh/video-editing-automation.git
 cd video-editing-automation
-```
 
-2. Configure environment and dependencies:
-```bash
+# Setup backend
 cd backend
+pip install -r requirements.txt
+python main.py
+
+# Setup frontend
+cd ../frontend
 npm install
-cp .env.example .env
-npm run start
+npm run dev
 ```
-
 ---
 
-## Interface and Verification
-The system produces verifiable execution logs, prediction matrices, or interactive browser interfaces depending on the target mode. Verify operation by executing the commands specified above or inspecting the demonstration notebooks.
+## Author & Contact Information
 
----
-
-## Author and Contact
-Developed by **Sohail Ahmed** — Full Stack AI Engineer & Machine Learning Specialist.
-- **Portfolio:** [sohail.devsil.com](https://sohail.devsil.com)
-- **GitHub:** [@sohailahmed-bsrh](https://github.com/sohailahmed-bsrh)
-- **Email:** [sohail.bsrh@gmail.com](mailto:sohail.bsrh@gmail.com)
+<table width="100%" align="center">
+  <tr>
+    <td align="center" style="padding: 20px;">
+      <h3>Sohail Ahmed</h3>
+      <p><strong>Full-Stack Artificial Intelligence & Computer Vision Engineer</strong></p>
+      <p>
+        <a href="https://sohail.devsil.com"><img src="https://img.shields.io/badge/Live_Portfolio-sohail.devsil.com-0052FF?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio"/></a>
+        <a href="https://github.com/sohailahmed-bsrh"><img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+        <a href="https://linkedin.com/in/sohail-ahmed-dev"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+        <a href="mailto:sohail.bsrh@gmail.com"><img src="https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+      </p>
+      <p><em>Available for technical roles in Artificial Intelligence, Computer Vision, and Full-Stack Engineering.</em></p>
+      <hr style="border: 0; height: 1px; background: #30363d; margin: 15px 0;">
+      <small>Repository: <code>sohailahmed-bsrh/video-editing-automation</code> &bull; Distributed under the MIT License.</small>
+    </td>
+  </tr>
+</table>
